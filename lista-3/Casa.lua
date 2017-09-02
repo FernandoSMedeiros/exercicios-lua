@@ -34,6 +34,8 @@ function casa:totalDePortas()
 		i = i+1
 	end	
 
+	return i
+
 end
 
 -- Extra

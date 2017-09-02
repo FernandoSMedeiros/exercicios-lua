@@ -37,3 +37,5 @@ local casa = novaCasa()
 --local casa:addPorta(porta2)
 --local casa:addPorta(porta3)
 --local casa:addPorta(porta4)
+
+print(casa:totalDePortas())

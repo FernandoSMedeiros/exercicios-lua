@@ -1,4 +1,4 @@
-porta = {cor = "", aberta = false, dimensaoX, dimensaoY, dimensaoZ}
+local porta = {cor = "", aberta, dimensaoX, dimensaoY, dimensaoZ}
 
 function novaPorta()
 
@@ -6,7 +6,7 @@ function novaPorta()
 
 	setmetatable(o , {__index = porta})
 
-	return porta
+	return o
 end
 
 function porta:pintar(cor)

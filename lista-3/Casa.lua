@@ -17,7 +17,7 @@ function casa:quantasPortasEstaoAbertas()
 	local i = 0
 
 	for k, v in ipairs(self.portas) do		
-		if (v:aberta()) then			
+		if (v.aberta) then			
 			i = i+1
 		end
 	end
@@ -30,9 +30,9 @@ function casa:totalDePortas()
 
 	local i = 0
 
-	for i in self.portas do
-		i = i+1
-	end	
+	for k, v in ipairs(self.portas) do					
+			i = i+1		
+	end
 
 	return i
 

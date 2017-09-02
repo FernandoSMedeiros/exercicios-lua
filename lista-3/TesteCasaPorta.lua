@@ -38,4 +38,20 @@ casa:addPorta(porta2)
 casa:addPorta(porta3)
 casa:addPorta(porta4)
 
---print(casa:totalDePortas())
+
+
+print(casa:totalDePortas())
+print(casa:quantasPortasEstaoAbertas())
+
+porta4:fechar()
+porta3:fechar()
+
+print(casa:totalDePortas())
+print(casa:quantasPortasEstaoAbertas())
+
+porta4:fechar()
+porta3:abrir()
+
+print(casa:totalDePortas())
+print(casa:quantasPortasEstaoAbertas())
+

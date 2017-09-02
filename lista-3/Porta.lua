@@ -1,4 +1,4 @@
-porta = {cor = "", aberta, dimensaoX, dimensaoY, dimensaoZ}
+porta = {cor = "", aberta = false, dimensaoX, dimensaoY, dimensaoZ}
 
 function novaPorta()
 
@@ -14,11 +14,19 @@ function porta:pintar(cor)
 end	
 
 function porta:abrir()
-	self.aberta = true
+	if(self.aberta == false) then
+		print("porta já está aberta")
+	else	
+		self.aberta = true
+	end	
 end
 
 function porta:fechar()
-	self.aberta = false
+	if(self.aberta == true) then
+		self.aberta = false		
+	else	
+		print("porta já está fechada")
+	end	
 end
 
 function porta:aberta()

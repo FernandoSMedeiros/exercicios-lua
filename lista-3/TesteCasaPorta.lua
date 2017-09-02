@@ -33,9 +33,9 @@ porta4.dimensaoZ = 5
 
 local casa = novaCasa()
 
---local casa:addPorta(porta1)
---local casa:addPorta(porta2)
---local casa:addPorta(porta3)
---local casa:addPorta(porta4)
+casa:addPorta(porta1)
+casa:addPorta(porta2)
+casa:addPorta(porta3)
+casa:addPorta(porta4)
 
-print(casa:totalDePortas())
+--print(casa:totalDePortas())

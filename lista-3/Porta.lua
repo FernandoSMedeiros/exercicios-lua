@@ -5,6 +5,7 @@ function novaPorta()
 	local o = {}
 
 	setmetatable(o , {__index = porta})
+	o.aberta = false
 
 	return o
 end
@@ -15,17 +16,13 @@ end
 
 function porta:abrir()
 	if(self.aberta == false) then
-		print("porta já está aberta")
-	else	
-		self.aberta = true
+		self.aberta = true		
 	end	
 end
 
 function porta:fechar()
-	if(self.aberta == true) then
-		self.aberta = false		
-	else	
-		print("porta já está fechada")
+	if(self.aberta) then
+		self.aberta = false	
 	end	
 end
 

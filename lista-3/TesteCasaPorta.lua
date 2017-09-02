@@ -33,25 +33,31 @@ porta4.dimensaoZ = 5
 
 local casa = novaCasa()
 
+casa:pintar("Verde")
+
 casa:addPorta(porta1)
 casa:addPorta(porta2)
 casa:addPorta(porta3)
 casa:addPorta(porta4)
 
-
-
-print(casa:totalDePortas())
-print(casa:quantasPortasEstaoAbertas())
-
-porta4:fechar()
-porta3:fechar()
-
-print(casa:totalDePortas())
-print(casa:quantasPortasEstaoAbertas())
-
-porta4:fechar()
+porta1:abrir()
+porta2:abrir()
 porta3:abrir()
+porta4:fechar()
 
-print(casa:totalDePortas())
-print(casa:quantasPortasEstaoAbertas())
 
+print("\nDetalhes da Casa:\n")
+print("Cor: " .. casa.cor)
+print("Total de portas " .. casa:totalDePortas())
+print("Portas abertas " .. casa:quantasPortasEstaoAbertas())
+
+print("\n")
+
+for k,v in pairs(casa.portas) do
+	
+	local status = v.aberta 
+	local cor = v.cor
+
+	print(k,  "cor:  " .. cor .. " ", "status:", status )
+
+end

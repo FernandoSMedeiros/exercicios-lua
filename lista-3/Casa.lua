@@ -1,6 +1,4 @@
-local p = require("Porta")
-
-local casa = {cor = "", portas = {}}
+local casa = {cor = " ", portas = {}}
 
 function novaCasa()
 	local o = {}
@@ -8,7 +6,7 @@ function novaCasa()
 	return o	
 end
 
-function casa:pinta(cor)
+function casa:pintar(cor)
 	self.cor = cor
 end
 

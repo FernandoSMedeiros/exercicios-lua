@@ -38,4 +38,4 @@ function tabuleiro:vencedor()
     	-- body
     end    
 
- print(tabuleiro:mostrar())
+return tabuleiro

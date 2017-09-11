@@ -1,4 +1,4 @@
-local jogador{nome = "", caracter = ''}
+local jogador = {nome = "", caracter = ''}
 
 function jogador:novo()
 	local x = {}

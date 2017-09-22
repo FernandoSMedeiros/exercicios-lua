@@ -3,9 +3,13 @@ local tabuleiro = { {'_', '_', '_'},
 				    {' ', ' ', ' '} }
 
 function tabuleiro:novo()
+	
 	local x = {}
+	
 	setmetatable(x, {__index = tabuleiro})
+	
 	return x
+
 end			
 
 function tabuleiro:mostrar()

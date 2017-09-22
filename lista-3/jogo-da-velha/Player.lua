@@ -1,19 +1,11 @@
 local jogador = {nome = "", caracter = ''}
 
-function jogador:novo()
+function jogador:novo(caracter)
 	local x = {}
-
 	setmetatable(x, {__index = jogador})
-
+	x.caracter = caracter
 	return x
 end
 
-function jogador:selecioneOcaracter(caracter)
-	if caracter == 'O' or caracter == 'X' then
-		self.caracter = caracter
-	end	
-end
+return jogador
 
-function jogador:novo(nome)
-	self.nome = nome
-end

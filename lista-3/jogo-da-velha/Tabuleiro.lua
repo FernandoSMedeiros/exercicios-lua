@@ -50,12 +50,12 @@ function tabuleiro:jogada(linha, cluna, player)
 		self[linha][coluna] = player.simbolo
 		
 		return true
-		
+
 	else
 
 		return false
 	end
 
-	end       
+end       
 
 return tabuleiro

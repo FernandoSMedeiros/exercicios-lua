@@ -40,6 +40,22 @@ end
 
 function tabuleiro:vencedor()
     	-- body
-    end    
+    end 
+
+function tabuleiro:jogada(linha, cluna, player)
+
+	if (linha >= 1 and linha <= 3) and (coluna >= 1 and coluna <=3) and 
+	   ((self[linha][coluna] == "_") or (self[linha][coluna] == " "))then
+		
+		self[linha][coluna] = player.simbolo
+		
+		return true
+		
+	else
+
+		return false
+	end
+
+	end       
 
 return tabuleiro

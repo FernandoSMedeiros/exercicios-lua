@@ -40,13 +40,25 @@ end
 
 function tabuleiro:vencedor()
     	
+    local diagonal1 = (self[1][1] == self[2][2]) and (self[3][3] == self[2][2])
+
+    local diagonal2 = (self[1][3] == self[2][2]) and (self[3][3] == self[3][1])
+
+    if diagonal1 or diagonal2 then
+    	return true
+    end
+
     for i=1,3 do
-    		if (self[i][1] == self[i][2]) and (self[i][3] == self[i][2]) then
+
+    	local linha = (self[i][1] == self[i][2]) and (self[i][3] == self[i][2])
+    	local coluna = (self[1][i] == self[2][i]) and (self[3][i] == self[2][i])
+
+    		if linha then
     			
     			return true
     			break
 
-    		elseif (self[1][i] == self[2][i]) and (self[3][i] == self[2][i])	
+    		elseif coluna	
 
     			return true
     			break
@@ -67,6 +79,27 @@ function tabuleiro:jogada(linha, cluna, player)
 
 		return false
 	end
+
+end
+
+function tabuleiro:acabou()
+
+	local acabou = true
+
+	for i, v in self do 
+
+		for j = 1, 3 do
+
+			if v[i][j] == "_" or v[i][j] == " " then
+				acabou = false
+				break
+			end
+
+		end	
+
+	end	
+
+	return acabou
 
 end       
 

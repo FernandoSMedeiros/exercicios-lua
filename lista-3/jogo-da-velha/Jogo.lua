@@ -25,4 +25,10 @@ function  jogo:suaVez()
 	end		
 end
 
+function jogo:iniciar()
+
+
+
+end 
+
 return jogo

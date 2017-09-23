@@ -39,8 +39,20 @@ function tabuleiro:mostrar()
 end	
 
 function tabuleiro:vencedor()
-    	-- body
-    end 
+    	
+    for i=1,3 do
+    		if (self[i][1] == self[i][2]) and (self[i][3] == self[i][2]) then
+    			
+    			return true
+    			break
+
+    		elseif (self[1][i] == self[2][i]) and (self[3][i] == self[2][i])	
+
+    			return true
+    			break
+    	end	
+
+end 
 
 function tabuleiro:jogada(linha, cluna, player)
 

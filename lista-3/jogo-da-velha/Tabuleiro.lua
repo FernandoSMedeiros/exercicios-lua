@@ -1,13 +1,9 @@
-local tabuleiro = { {'_', '_', '_'},
-				    {'_', '_', '_'}, 
-				    {' ', ' ', ' '} }
+local tabuleiro = { {'_', '_', '_'}, {'_', '_', '_'}, {' ', ' ', ' '} }
 
 function tabuleiro:novo()
 	
-	local x = {}
-	
-	setmetatable(x, {__index = tabuleiro})
-	
+	local x = {}	
+	setmetatable(x, {__index = tabuleiro})	
 	return x
 
 end			
@@ -16,8 +12,7 @@ function tabuleiro:mostrar()
 	
 	string = ""
 
-	for i = 1, #tabuleiro do 
-		
+	for i = 1, #tabuleiro do		
 		for j=1,3 do
 			
 			string = string .. tabuleiro[i][j]
@@ -40,14 +35,6 @@ end
 
 function tabuleiro:vencedor()
     	
-    local diagonal1 = (self[1][1] == self[2][2]) and (self[3][3] == self[2][2])
-
-    local diagonal2 = (self[1][3] == self[2][2]) and (self[3][3] == self[3][1])
-
-    if diagonal1 or diagonal2 then
-    	return true
-    end
-
     for i=1,3 do
 
     	local linha = (self[i][1] == self[i][2]) and (self[i][3] == self[i][2])
@@ -63,6 +50,13 @@ function tabuleiro:vencedor()
     			return true
     			break
     	end	
+
+    local diagonal1 = (self[1][1] == self[2][2]) and (self[3][3] == self[2][2])
+    local diagonal2 = (self[1][3] == self[2][2]) and (self[3][3] == self[3][1])
+
+    if diagonal1 or diagonal2 then
+    	return true
+    end	
 
 end 
 
@@ -101,6 +95,22 @@ function tabuleiro:acabou()
 
 	return acabou
 
-end       
+end      
+
+function tabuleiro:tracar(posicao, linhaOuColuna)
+
+	if linhaOuColuna == "linha" then
+		for i = 1, 3 do
+			self[posicao][i] = "-"
+		end
+	end	
+
+	if linhaOuColuna == "coluna" then
+		for i = 1, 3 do
+			self[i][posicao] = "|"
+		end
+	end		
+
+end 
 
 return tabuleiro
